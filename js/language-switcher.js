@@ -340,6 +340,7 @@ const translations = {
     "language_de": "German",
     "language_en": "English"
 }
+};
 
 
 
