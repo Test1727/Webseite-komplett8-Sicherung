@@ -489,9 +489,40 @@ section {
     margin-bottom: 0.5rem;
 }
 
-/* Skills, Projects, Contact Sections - Placeholder styling */
-.skills, .projects, .contact {
-    background-color: var(--background-color);
+/* Skills Section - warm, abgestimmt auf About */
+.skills {
+    background: linear-gradient(120deg, #f9f5f0 0%, #f2eae3 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+/* Erste Form - kaum wahrnehmbar (wie About) */
+.skills::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(220, 200, 180, 0.08) 0%, rgba(220, 200, 180, 0) 70%);
+    top: -250px;
+    right: -200px;
+    border-radius: 50%;
+    filter: blur(70px);
+    z-index: 0;
+}
+
+/* Zweite Form - noch dezenter (wie About) */
+.skills::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(190, 200, 220, 0.05) 0%, rgba(190, 200, 220, 0) 70%);
+    bottom: -200px;
+    left: -150px;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
 }
 
 .skills p, .projects p, .contact p {
