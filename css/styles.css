@@ -413,44 +413,33 @@ section {
     }
 }
 
-
-
-/* Desktop (größer als 992px) */
-@media (min-width: 993px) {
+/* Smartphone (bis 768px) */
+@media (max-width: 768px) {
     .profile-image {
-        width: 300px;  /* Ursprüngliche Größe */
-        height: 300px;
+        width: 180px !important;
+        height: 180px !important;
     }
 }
 
 /* Tablet (769px - 992px) */
 @media (min-width: 769px) and (max-width: 992px) {
-    .hero-image .profile-image {
-        width: 250px !important;
-        height: 250px !important;
+    .profile-image {
+        width: 280px !important;  /* Größerer Wert */
+        height: 280px !important;
+    }
+}
+
+/* Desktop (ab 993px) */
+@media (min-width: 993px) {
+    .profile-image {
+        width: 300px;
+        height: 300px;
     }
 }
 
 
 
 
-/* Smartphone-Anpassungen */
-
-@media (max-width: 768px) {
-    .hero .container {
-        flex-direction: column;
-        text-align: center;
-    }
-.header {
-        position: fixed;
-        background-color: rgba(17, 44, 75, 0.95);
-        backdrop-filter: blur(5px);
-    }
-    
-    .hero {
-        padding-top: 80px;
-    }   
-}
 
 
 @media (max-width: 768px) {
