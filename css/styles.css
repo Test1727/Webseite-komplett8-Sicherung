@@ -143,7 +143,8 @@ img {
 }
 
 
-/* Sektionsüberschriften mit Hover-Effekt */
+
+/* Sektionsüberschriften mit Hover-Effekt - TEST */
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
@@ -154,7 +155,7 @@ img {
 }
 
 .section-title:hover {
-    color: #00ffff !important;  /* Türkis erzwingen */
+    color: red !important;  /* TEST - ROT */
     cursor: default;
 }
 
@@ -172,9 +173,14 @@ img {
 }
 
 .section-title:hover::after {
-    background-color: #00ffff !important;  /* Türkis erzwingen */
+    background-color: red !important;  /* TEST - ROT */
     width: 100px;
 }
+
+
+
+
+
 
 
 
