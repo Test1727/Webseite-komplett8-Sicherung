@@ -462,7 +462,8 @@ section {
 
 .hero-brain {
     position: absolute;
-    left: -30%;    /* Nach links erweitern */
+    top: -50px;  /* Negativer Wert schiebt nach oben */
+    left: -40%;   /* Nach links erweitern */
     right: -50%;         /* Nach rechts erweitern */
     top: 0;
     width: auto;         /* Automatisch */
