@@ -413,8 +413,27 @@ section {
     }
 }
 
-/* Smartphone-Anpassungen */
 
+
+/* Desktop (größer als 992px) */
+@media (min-width: 993px) {
+    .profile-image {
+        width: 300px;  /* Ursprüngliche Größe */
+        height: 300px;
+    }
+}
+
+/* Tablet (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+
+/* Smartphone-Anpassungen */
 
 @media (max-width: 768px) {
     .hero .container {
