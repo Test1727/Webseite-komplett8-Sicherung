@@ -277,6 +277,7 @@ section {
     opacity: 0.8;
     animation: leftPulse 4s infinite alternate;
     pointer-events: none;
+    z-index: 5; 
 }
 
 /* Datenlinien und Lichtpunkte - Übergangsbereich */
