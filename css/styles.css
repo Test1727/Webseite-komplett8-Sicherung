@@ -311,7 +311,7 @@ section {
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
     border: 4px solid #00ffff;
     animation: glowPulse 4s infinite alternate;
-    margin-top: -20px;  /* Negativer Wert schiebt nach oben */
+    margin-top: -50px;  /* Negativer Wert schiebt nach oben */
 }
 
 
