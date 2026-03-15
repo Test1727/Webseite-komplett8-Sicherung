@@ -414,11 +414,23 @@ section {
 }
 
 /* Smartphone-Anpassungen */
+
+
 @media (max-width: 768px) {
     .hero .container {
         flex-direction: column;
         text-align: center;
     }
+}
+
+
+@media (max-width: 768px) {
+    .hero-buttons {
+        margin-top: 40px;  /* Mehr Abstand */
+        margin-bottom: 30px;
+    }
+}
+    
     
     .hero-image {
         margin-top: 1rem;  /* Weniger Abstand */
