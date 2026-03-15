@@ -304,10 +304,11 @@ section {
     pointer-events: none;
 }
 
+
 .hero-brain2 {
     position: absolute;
     top: -100px;
-    right: -30%; /* Jetzt frei, weil left nicht mehr blockiert */
+    right: -50%;  /* Gleicher Wert wie left bei Bild 1 */
     width: auto;
     height: 150%;
     object-fit: cover;
@@ -315,8 +316,6 @@ section {
     z-index: 1;
     pointer-events: none;
 }
-
-
 
 
 
