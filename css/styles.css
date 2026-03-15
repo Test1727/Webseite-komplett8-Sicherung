@@ -2,7 +2,7 @@
 :root {
     --primary-color: #0a2463; /* Deep Blue */
     --secondary-color: #3e92cc; /* Lighter Blue */
-    --accent-color: #2ce592; /* Bright Accent - e.g., Mint Green */
+    --accent-color: #00ffff; /* Von #2ce592 zu TÜRKIS geändert */
     --text-color: #333;
     --light-text-color: #f4f4f4;
     --background-color: #ffffff;
@@ -184,7 +184,7 @@ header .container {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--accent-color)
+    color: var(--primary-color);
     font-family: var(--font-primary);
 }
 
@@ -197,7 +197,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--accent-color);
+    color: var(--primary-color);
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -211,6 +211,8 @@ nav ul li a:hover, nav ul li a.active {
     padding: 10px 20px;
     font-size: 0.9rem;
 }
+
+
 
 /* Main Content Area */
 main {
