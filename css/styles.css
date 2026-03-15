@@ -421,6 +421,15 @@ section {
         flex-direction: column;
         text-align: center;
     }
+.header {
+        position: fixed;
+        background-color: rgba(17, 44, 75, 0.95);
+        backdrop-filter: blur(5px);
+    }
+    
+    .hero {
+        padding-top: 80px;
+    }   
 }
 
 
