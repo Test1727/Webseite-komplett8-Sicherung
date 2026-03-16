@@ -553,14 +553,24 @@ section {
         margin-top: 20px;
     }
 
-    .hero-brain {
-        height: 430% !important;
-        top: -200% !important;
-        left: -80% !important;
-        transform: rotate(-90deg) scale(2.2) !important;
-        width: auto;
+    
+
+
+.hero-brain {
+        height: 150% !important;        /* GEÄNDERT: Von 430% zu 150% */
+        width: auto !important;
+        top: auto !important;            /* GEÄNDERT: Von -200% zu auto */
+        bottom: -10% !important;         /* NEU: Unten ausrichten */
+        left: -100% !important;
+        right: auto !important;
+        transform: rotate(-90deg) scale(1.5) !important;  /* Skalierung reduziert */
         object-fit: cover;
+        object-position: center bottom;
+        opacity: 0.3;
     }
+
+    
+
     
     .hero {
         min-height: 100vh;
