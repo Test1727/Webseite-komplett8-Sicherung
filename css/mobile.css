@@ -197,8 +197,9 @@ nav ul li a {
         left: 0;
     }
     
-    .timeline-item::after {
-        left: 20px;
+    .timeline-item::after {       
+        transform: translateX(-50%);  /* Zentriert den Punkt genau */
+        left: 50px;
     }
     
     .timeline-date {
