@@ -4,6 +4,10 @@
 @media (max-width: 768px) {
     /* === ALLGEMEINE LAYOUTS === */
 
+    section {
+    padding: 60px 0;
+    scroll-margin-top: 50px;  /* Wert anpassen bis es passt */
+}
 
 
     /* Hero Section */
