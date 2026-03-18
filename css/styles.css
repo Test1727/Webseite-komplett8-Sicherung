@@ -975,12 +975,12 @@ textarea::placeholder {
 
 
 .captcha-container .captcha-question p[data-i18n="form_captcha"] {
-    color: #e0f7ff;  /* Schriftfarbe wie Nachricht im Textarea */
-    background: #5e9fd6;  /* Hintergrund wie 128-bit */
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-weight: 500;
-    margin-bottom: 10px;
+    color: #e0f7ff !important;  /* Schriftfarbe wie Nachricht im Textarea */
+    background: #5e9fd6 !important;  /* Hintergrund wie 128-bit */
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+    font-weight: 500  !important;
+    margin-bottom: 10px !important;
 }
 
 
