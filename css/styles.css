@@ -994,19 +994,17 @@ textarea::placeholder {
     opacity: 0.8;
 }
 
+
 #captcha-answer {
     display: flex;
     align-items: center;     /* Vertikal zentrieren */
     justify-content: center; /* Horizontal zentrieren */
     text-align: center;      /* Fallback für den Text */
-    height: 50px;
+    height: 60px;            /* Etwas größer */
+    font-size: 1.4rem;       /* Größere Schrift */
+    font-weight: 700;        /* Fetter (700 = bold) */
+    letter-spacing: 0.5px;   /* Minimal mehr Platz zwischen Buchstaben */
 }
-
-
-
-
-
-
 
 
 
