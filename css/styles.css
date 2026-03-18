@@ -889,8 +889,8 @@ textarea {
 }
 
 textarea:focus {
-    box-shadow: 0 0 10px #00c6ff;
-    border-color: #0a1a2f;;
+    box-shadow: 0 0 10px #00c6ff;0a1a2f
+    border-color: #0a1a2f;
 }
 
 .encryption-status {
