@@ -1342,5 +1342,25 @@
             }
         })
     </script>
+
+    <script>
+// Warten bis das DOM vollständig geladen ist
+document.addEventListener('DOMContentLoaded', function() {
+    const textarea = document.getElementById("contact-message");
+    const status = document.querySelector(".faux-percentage");
+
+    if (textarea && status) {
+        let steps = ["128-bit", "256-bit", "512-bit"];
+        let index = 0;
+
+        textarea.addEventListener("input", function() {
+            index = (index + 1) % steps.length;
+            status.textContent = steps.slice(0, index + 1).join(" → ");
+        });
+    }
+});
+</script>
+
+    
 </body>
 </html>
