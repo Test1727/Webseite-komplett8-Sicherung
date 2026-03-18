@@ -869,16 +869,28 @@ section {
 
 
 /* Textbox  */
-.futuristic-badge {
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
-    color: white;
-    padding: 2px 8px;
-    font-size: 0.7rem;
-    border-radius: 8px;
-    margin-left: 8px;
-    box-shadow: 0 0 8px rgba(0, 198, 255, 0.7);
+/* Label als Flex-Container für Badge neben "Nachricht" */
+label[for="contact-message"] {
+    display: flex;
+    align-items: center;
+    gap: 10px;         /* Abstand zwischen "Nachricht" und Badge */
+    margin-bottom: 8px; /* Abstand zur Textarea */
+    font-weight: 500;
 }
 
+/* Badge-Stil - OHNE position: absolute */
+.futuristic-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    box-shadow: 0 0 8px rgba(0, 198, 255, 0.7);
+    white-space: nowrap;
+}
+
+/* Textarea - normal ohne spezielles Padding */
 textarea {
     width: 100%;
     background: #1a4a7a;
@@ -888,6 +900,12 @@ textarea {
     border-radius: 6px;
     outline: none;
 }
+
+
+
+
+
+
 
 textarea:focus {
     box-shadow: 0 0 10px #00c6ff;
