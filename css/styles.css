@@ -896,7 +896,7 @@ textarea:focus {
 .encryption-status {
     margin-top: 5px;
     font-size: 0.8rem;
-    color: #0a66c2;  /* LinkedIn-Blau */
+    color: #0077b5; /* LinkedIn-Blau */
     display: flex;
     align-items: center;
     gap: 10px;
@@ -906,7 +906,7 @@ textarea:focus {
 .encryption-status .dot {
     width: 8px;
     height: 8px;
-    background: #0a66c2;  /* Gleiches LinkedIn-Blau für den Punkt */
+    background:  #0077b5;  /* Gleiches LinkedIn-Blau für den Punkt */
     border-radius: 50%;
     animation: pulse 1s infinite;
     box-shadow: 0 0 5px #0a66c2;  /* Passenden Schatten hinzugefügt */
