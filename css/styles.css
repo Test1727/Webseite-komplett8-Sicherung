@@ -1558,7 +1558,8 @@ footer p {
    ======================================== */
 
 section[id] {
-    scroll-margin-top: clamp(60px, 8vh, 90px);
+    scroll-margin-top: 60px;
 }
+
 
 
