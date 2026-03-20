@@ -313,7 +313,7 @@ nav ul li a {
     }
 
     .carousel-slide {
-    width: 100% important;  /* Jeder Slide nimmt die volle Breite */
+    width: 100% !important;  /* Jeder Slide nimmt die volle Breite */
     flex: 0 0 auto;
 }
        
