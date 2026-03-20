@@ -396,6 +396,9 @@ section {
     100% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.2); }
 }
 
+
+
+
 /* ========================================
    ABOUT SECTION
    ======================================== */
@@ -471,6 +474,10 @@ section {
 
 .detail-item h3 + ul {
     margin-top: 0;
+}
+
+.detail-item ul li span[data-i18n="marital_status_value"] {
+    white-space: nowrap;
 }
 
 .interests-heading {
