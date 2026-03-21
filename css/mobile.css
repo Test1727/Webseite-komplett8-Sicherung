@@ -44,16 +44,6 @@
         justify-content: center !important;
     }
     
-    .carousel-slide {
-        width: calc(50% - 20px) !important;
-        max-width: 380px !important;
-        flex: 0 0 auto !important;
-    }
-
-    
-    
-
-
     
     * {
         box-sizing: border-box !important;
