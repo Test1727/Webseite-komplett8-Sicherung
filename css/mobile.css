@@ -248,11 +248,15 @@
         grid-template-columns: 1fr;
     }
 
-    .skill-item {
-    text-align: center;
-    margin: 0 auto;
-    }
+
+
+
+
+
+
     
+
+
     /* Timeline */
     .timeline::after {
         left: 10px;
