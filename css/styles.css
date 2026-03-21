@@ -366,18 +366,22 @@ section {
     z-index: 3;
 }
 
+
+/* NEUER .hero-brain BLOCK */
 .hero-brain {
     position: absolute;
-    top: -100px;
-    left: -40%;
+    top: 50%;
+    left: 50%;
     width: auto;
-    height: 150%;
-    transform: rotate(-90deg);
+    height: 200%;
+    transform: translate(-50%, -50%) scale(1);
     object-fit: cover;
-    opacity: 0.3;
+    opacity: 0.25;
     z-index: 1;
     pointer-events: none;
 }
+
+
 
 .profile-image {
     width: 300px;
