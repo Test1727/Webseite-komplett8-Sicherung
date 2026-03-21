@@ -114,6 +114,9 @@
     
     
     /* === ALLGEMEINE LAYOUTS === */
+    html {
+    scroll-padding-top: 90px;
+    
 
     section {
         padding: 60px 0;
