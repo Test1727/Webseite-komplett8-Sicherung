@@ -985,37 +985,90 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
 
     <script>
-// Zeigt alle geladenen CSS-Dateien in der Konsole an
+// CSS-Analyse mit VISUELLER ANZEIGE auf der Seite
 (function() {
-    console.log('=== Geladene CSS-Dateien ===');
-    const stylesheets = document.querySelectorAll('link[rel="stylesheet"]');
-    stylesheets.forEach((sheet, index) => {
-        console.log(`${index + 1}. ${sheet.href || sheet.getAttribute('href')}`);
+    // Erstelle ein div für die Anzeige
+    const infoBox = document.createElement('div');
+    infoBox.style.cssText = `
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.9);
+        color: #0f0;
+        font-family: monospace;
+        font-size: 12px;
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 9999;
+        max-height: 50%;
+        overflow: auto;
+        pointer-events: none;
+        font-weight: bold;
+        border: 2px solid #0f0;
+    `;
+    document.body.appendChild(infoBox);
+    
+    function updateInfo() {
+        const width = window.innerWidth;
+        const isMobile = width <= 768;
+        const isTablet = width > 768 && width <= 992;
+        
+        // Prüfe mobile.css
+        const mobileCSS = document.querySelector('link[href*="mobile.css"]');
+        
+        // Header-Höhe messen
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        
+        // scroll-padding-top prüfen
+        const scrollPadding = getComputedStyle(document.documentElement).scrollPaddingTop;
+        
+        // Hero padding-top prüfen
+        const hero = document.querySelector('.hero');
+        const heroPadding = hero ? getComputedStyle(hero).paddingTop : 'nicht gefunden';
+        
+        infoBox.innerHTML = `
+            <strong>📱 CSS-INFO (${width}px)</strong><br>
+            Gerät: ${width <= 768 ? '📱 SMARTPHONE' : (width <= 992 ? '📟 TABLET' : '💻 DESKTOP')}<br>
+            mobile.css: ${mobileCSS ? '✅ GELADEN' : '❌ NICHT GELADEN'}<br>
+            Header-Höhe: ${headerHeight}px<br>
+            scroll-padding-top: ${scrollPadding}<br>
+            Hero padding-top: ${heroPadding}<br>
+            <hr>
+            <small style="color:#ff0;">Klicke auf ein Element um CSS-Quellen zu sehen →</small>
+        `;
+    }
+    
+    // Alle 2 Sekunden aktualisieren
+    setInterval(updateInfo, 2000);
+    updateInfo();
+    
+    // Beim Klick auf ein Element: Zeige CSS-Quellen
+    document.addEventListener('click', function(e) {
+        const el = e.target;
+        const styles = getComputedStyle(el);
+        
+        infoBox.innerHTML += `
+            <hr>
+            <strong>🔍 Element: ${el.tagName}</strong><br>
+            padding-top: ${styles.paddingTop}<br>
+            margin-top: ${styles.marginTop}<br>
+            position: ${styles.position}<br>
+            <span style="color:#0ff;">Quelle: im Elements-Tab (F12) prüfen</span>
+        `;
+        
+        // Nach 3 Sekunden wieder zurücksetzen
+        setTimeout(() => {
+            updateInfo();
+        }, 5000);
     });
     
-    // Zeigt auch die Reihenfolge der Styles an
-    console.log('\n=== Stylesheet-Reihenfolge (wichtig für Überschreibungen) ===');
-    const allStyles = document.styleSheets;
-    for(let i = 0; i < allStyles.length; i++) {
-        try {
-            const href = allStyles[i].href;
-            if(href) console.log(`${i}. ${href}`);
-            else console.log(`${i}. (inline oder user-agent styles)`);
-        } catch(e) {
-            console.log(`${i}. (CORS-geschützt)`);
-        }
-    }
-    
-    // Speziell für mobile.css prüfen
-    console.log('\n=== mobile.css geladen? ===');
-    const mobileCSS = document.querySelector('link[href*="mobile.css"]');
-    if(mobileCSS) {
-        console.log('✅ mobile.css ist geladen:', mobileCSS.href);
-    } else {
-        console.log('❌ mobile.css wurde NICHT gefunden!');
-    }
+    console.log('✅ CSS-Info-Box aktiviert. Unten links erscheint ein grünes Fenster!');
 })();
 </script>
+
+
 
 
 
