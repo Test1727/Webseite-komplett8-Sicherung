@@ -595,7 +595,7 @@
     .hero {
         height: auto;
         min-height: 100vh;
-        padding-top: 100px !important;
+        padding-top: 120px !important;
     }
     
     .hero .container {
