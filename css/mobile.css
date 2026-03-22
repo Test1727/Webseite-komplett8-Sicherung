@@ -561,16 +561,35 @@
 
 
 
-/* === EXTRA KLEINE SMARTPHONES (bis 480px) === */
+
+
+
+
+/* ========================================
+   EXTRA KLEINE SMARTPHONES (max-width: 480px)
+   ======================================== */
+
 @media (max-width: 480px) {
+    
+    /* === BASIS-TYPOGRAFIE - NOCH KOMPAKTER === */
     body {
         font-size: 14px;
     }
     
     h1 { font-size: 1.8rem; }
     h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.2rem; }
+    h4 { font-size: 1rem; }
+    
+    /* === SEKTIONSÜBERSCHRIFTEN === */
     .section-title {
         font-size: 1.4rem !important;
+        margin-bottom: 1.2rem !important;
+    }
+    
+    /* === HEADER & NAVIGATION === */
+    nav ul {
+        gap: 6px 10px;
     }
     
     nav ul li a {
@@ -578,6 +597,18 @@
         padding: 3px 8px !important;
     }
     
+    .language-selector select,
+    .resume-btn {
+        height: 22px !important;
+        font-size: 0.55rem !important;
+        padding: 0px 6px !important;
+    }
+    
+    .language-selector select {
+        padding-right: 22px !important;
+    }
+    
+    /* === HERO SECTION === */
     .hero-content h1 {
         font-size: 1.8rem;
     }
@@ -592,15 +623,60 @@
     }
     
     .hero-buttons .btn {
-        min-width: 180px;
+        min-width: 160px;
         padding: 8px 16px;
         font-size: 0.9rem;
     }
     
+    /* === ABOUT SECTION === */
     .about-text p[style*="font-size: 1.25rem"] {
         font-size: 1rem !important;
     }
     
+    /* === TIMELINE (EXPERIENCE) === */
+    .timeline-content {
+        padding: 12px 15px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .timeline-content ul li {
+        font-size: 0.85rem;
+    }
+    
+    /* === SKILLS SECTION === */
+    .skill-name {
+        font-size: 0.85rem;
+    }
+    
+    .skill-percentage {
+        font-size: 0.8rem;
+    }
+    
+    .soft-skill-icon {
+        font-size: 22px;
+    }
+    
+    .soft-skill-name {
+        font-size: 0.9rem;
+    }
+    
+    .language-name {
+        font-size: 0.9rem;
+    }
+    
+    .star-rating {
+        font-size: 16px;
+    }
+    
+    .skill-tile {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+    
+    /* === CAROUSEL === */
     .project-card-carousel {
         min-height: 380px;
     }
@@ -613,92 +689,57 @@
         font-size: 0.9rem;
     }
     
+    .carousel-header p {
+        font-size: 0.6rem;
+    }
+    
     .carousel-body li {
         font-size: 0.7rem;
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-/* Kleine Smartphones (bis 480px) - ZUSÄTZLICHES MEDIA QUERY */
-@media (max-width: 480px) {
-  
-    .hero-content h1 {
-        font-size: 2.2rem;
+    
+    .carousel-tag {
+        font-size: 0.55rem;
     }
     
-    .hero-content h2 {
-        font-size: 1.2rem;
-    }
-
-    .hero-buttons .btn {
-        width: 90%;
-        padding: 12px 15px;
+    .carousel-button {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
     }
     
-    .profile-image {
-        width: 150px !important;
-        height: 150px !important;
+    .safety-film-center {
+        font-size: 7px;
+        bottom: 8px;
     }
     
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
+    /* === CONTACT SECTION === */
+    .contact-textbox h3,
+    .contact-form-container h3 {
+        font-size: 1.1rem;
     }
     
-    .hero-buttons .btn {
-        min-width: 200px;
+    .contact-content p,
+    .contact-content a {
+        font-size: 0.8rem;
     }
     
-    .logo {
-        font-size: 1rem !important;
-    }
-    
-    nav ul li a {
-        font-size: 0.7rem !important;
-    }
-
-    h4[data-i18n="exp1_subtitle_strategic"] {
-        margin-top: 0.75rem !important;
-        font-size: 1rem;
-    }
-    
-    /* Filmstreifen */
-    .project-card-carousel {
-        height: 380px;
-        min-height: 380px;
-    }
-    
-    .carousel-image {
-        height: 130px;
-    }
-    
-    .carousel-header h3 {
+    .contact-form textarea {
+        height: 110px;
         font-size: 0.85rem;
+        padding-top: 20px;
     }
     
-    .carousel-body li {
+    #captcha-answer {
+        height: 45px;
         font-size: 0.65rem;
     }
     
-    .carousel-tag {
-        font-size: 0.5rem;
+    /* === FOOTER === */
+    footer {
+        padding: 1.2rem 0;
     }
     
-
+    footer p {
+        font-size: 0.75rem;
+    }
 }
-
-
-
-
-
-
-
