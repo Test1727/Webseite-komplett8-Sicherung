@@ -712,7 +712,7 @@
                                                   rows="5" 
                                                   readonly
                                                   data-max-words="100"
-                                                  data-i18n-placeholder="form_message_placeholder"
+                                                  data-i18n="form_message_placeholder"
                                                   placeholder="Ihre Nachricht wird in Echtzeit neuronal verschlüsselt..."></textarea>
 
                                         <div class="encryption-status">
@@ -723,34 +723,67 @@
 
 
 
-                                         <script>
-                                    // Warten bis das DOM vollständig geladen ist
-                                    document.addEventListener('DOMContentLoaded', function() {
-                                        const textarea = document.getElementById("contact-message");
-                                        
-                                        // Nur ausführen, wenn Textarea existiert
-                                        if (textarea) {
-                                            const messages = [
-                                                "🧠 Initialisiere Quantenkanal...",
-                                                "⚡ Synchronisiere Qubit-Verbindung...",
-                                                "🔒 Neuronale Verschlüsselung aktiv...",
-                                                "📡 Quantenverschlüsselung läuft...",
-                                                "🔄 Verschlüssele Nachricht in Echtzeit..."
-                                            ];
 
-                                            let index = 0;
 
-                                            // Placeholder alle 3 Sekunden wechseln
-                                            setInterval(() => {
-                                                // Nur wechseln, wenn Textarea NICHT fokussiert ist UND leer ist
-                                                if (document.activeElement !== textarea && textarea.value === "") {
-                                                    textarea.placeholder = messages[index];
-                                                    index = (index + 1) % messages.length;
-                                                }
-                                            }, 3000); // 3000ms = 3 Sekunden
-                                        }
-                                    });
-                                    </script>
+
+
+
+
+                                    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const textarea = document.getElementById("contact-message");
+    const languageSwitch = document.getElementById("language-switch");
+    
+    if (textarea) {
+        let currentLang = document.documentElement.lang || 'de';
+        let index = 0;
+
+        // Die rotierenden Texte direkt im Script (übersetzt)
+        const messages = {
+            de: [
+                "🧠 Initialisiere Quantenkanal...",
+                "⚡ Synchronisiere Qubit-Verbindung...",
+                "🔒 Neuronale Verschlüsselung aktiv...",
+                "📡 Quantenverschlüsselung läuft...",
+                "🔄 Verschlüssele Nachricht in Echtzeit..."
+            ],
+            en: [
+                "🧠 Initializing quantum channel...",
+                "⚡ Synchronizing qubit connection...",
+                "🔒 Neural encryption active...",
+                "📡 Quantum encryption running...",
+                "🔄 Encrypting message in real-time..."
+            ]
+        };
+
+        function updatePlaceholder() {
+            if (document.activeElement !== textarea && textarea.value === "") {
+                textarea.placeholder = messages[currentLang][index % messages[currentLang].length];
+                index++;
+            }
+        }
+
+        // Rotation starten
+        setInterval(updatePlaceholder, 3000);
+        
+        // Bei Sprachwechsel
+        if (languageSwitch) {
+            languageSwitch.addEventListener('change', function(e) {
+                currentLang = e.target.value;
+                index = 0;
+                updatePlaceholder();
+            });
+        }
+        
+        // Initial setzen
+        updatePlaceholder();
+    }
+});
+</script>
+
+
+
+                            
 
 
 
