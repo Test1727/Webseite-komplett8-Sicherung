@@ -1211,7 +1211,7 @@ section {
     position: relative;
     overflow: hidden;
     padding: 60px 0;
-    padding-bottom: 0 !important;
+   /* padding-bottom: 0 !important;*/
 }
 
 .contact::before {
