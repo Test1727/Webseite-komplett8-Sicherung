@@ -496,10 +496,34 @@
         font-size: 0.9rem;
         padding-top: 30px;
     }
+
+
+
     
-    .captcha-container .captcha-question p {
-        font-size: 0.85rem !important;
+    /* Deutsch */
+    html[lang="de"] .captcha-container .captcha-question p[data-i18n="form_captcha"] {
+        font-size: 0 !important;
     }
+    
+    html[lang="de"] .captcha-container .captcha-question p[data-i18n="form_captcha"]::before {
+        content: "Kurzer Mathe-Check: 7 + 5 = ?" !important;
+        font-size: 0.85rem !important;
+        display: block !important;
+    }
+    
+    /* Englisch */
+    html[lang="en"] .captcha-container .captcha-question p[data-i18n="form_captcha"] {
+        font-size: 0 !important;
+    }
+    
+    html[lang="en"] .captcha-container .captcha-question p[data-i18n="form_captcha"]::before {
+        content: "Quick Math Check: 7 + 5 = ?" !important;
+        font-size: 0.85rem !important;
+        display: block !important;
+    }
+
+    
+
     
     #captcha-answer {
         height: 50px;
