@@ -296,17 +296,48 @@
     
     .projects-carousel .carousel-container {
         margin: 0 40px;
-        gap: 20px;
-        justify-content: center;
+        /*gap: 20px;
+        justify-content: center;*/
+       
+       display: flex;
+        gap: 0 !important;           /* Kein Abstand zwischen Slides */
+        justify-content: flex-start; /* Slides linksbündig ausrichten */
+        margin: 0 auto;
+        width: fit-content;          /* Container nur so breit wie nötig */
+        min-width: 100%;             /* Mindestens volle Breite */    
     }
     
-    .carousel-slide {
+    /*.carousel-slide {
         width: calc(50% - 20px) !important;
         flex: 0 0 auto !important;
         min-width: 280px !important;
         max-width: 380px !important;
         border-right: none !important;
+    }*/
+
+       .carousel-slide {
+        flex: 0 0 clamp(280px, 30vw, 380px) !important;
+        max-width: 380px !important;
+        min-width: 280px !important;
+        border-right: 2px solid #ff8c42 !important;
+        box-sizing: border-box;
     }
+    
+    .carousel-slide:last-child {
+        border-right: none !important;
+    }
+    
+    /* Verhindert, dass der Container breiter wird als nötig */
+    .projects-carousel {
+        overflow-x: auto !important;
+        scrollbar-width: thin;
+    }
+
+
+
+
+
+   
     
     .project-card-carousel {
         height: 480px;
