@@ -118,29 +118,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                 );
             }
-
-
-Promise.all(loadPromises).then(() => {
-    // Zuerst scharf anzeigen (kein Blur)
-    pageImages.forEach(img => {
-        img.canvas.style.filter = 'blur(0px)';
-        img.canvas.style.transition = 'filter 0.8s ease';
-    });
-    
-    // Nach 0.3 Sekunden: langsam unscharf werden
-    setTimeout(() => {
-        pageImages.forEach(img => {
-            img.canvas.style.filter = 'blur(12px)';
-        });
-    }, 300);
-    
-    // Nach 1.8 Sekunden (0.3 + 1.5): Papierschnipsel-Zerfall
-    setTimeout(() => {
-        startPaperShredEffect(pagesWrapper, pageImages, container);
-    }, 1800);
-});
             
-     
+            Promise.all(loadPromises).then(() => {
+                // Zuerst scharf anzeigen (kein Blur)
+                pageImages.forEach(img => {
+                    img.canvas.style.filter = 'blur(0px)';
+                    img.canvas.style.transition = 'filter 0.8s ease';
+                });
+                
+                // Nach 0.3 Sekunden: langsam unscharf werden
+                setTimeout(() => {
+                    pageImages.forEach(img => {
+                        img.canvas.style.filter = 'blur(12px)';
+                    });
+                }, 300);
+                
+                // Nach 1.8 Sekunden (0.3 + 1.5): Papierschnipsel-Zerfall
+                setTimeout(() => {
+                    startPaperShredEffect(pagesWrapper, pageImages, container);
+                }, 1800);
+            });
             
         }).catch(function(error) {
             container.innerHTML = `<p style="padding:2rem; text-align:center; color:red;">
@@ -294,160 +291,187 @@ Promise.all(loadPromises).then(() => {
             showPlaceholder(container);
         }
     }
-
-// Platzhalter nach Zerfall anzeigen mit animierten Partikeln
-function showPlaceholder(container) {
-    container.innerHTML = '';
     
-    // Container für den Platzhalter
-    const placeholder = document.createElement('div');
-    placeholder.style.position = 'relative';
-    placeholder.style.padding = '3rem 2rem';
-    placeholder.style.textAlign = 'center';
-    placeholder.style.backgroundColor = '#f8f9fa';
-    placeholder.style.borderRadius = '12px';
-    placeholder.style.border = '2px dashed #0a3d62';
-    placeholder.style.margin = '1rem';
-    placeholder.style.overflow = 'hidden';
-    placeholder.style.minHeight = '400px';
-    placeholder.style.display = 'flex';
-    placeholder.style.flexDirection = 'column';
-    placeholder.style.justifyContent = 'center';
-    placeholder.style.alignItems = 'center';
-    placeholder.style.animation = 'fadeIn 0.5s ease';
-    
-    // Canvas für Partikel-Hintergrund
-    const canvas = document.createElement('canvas');
-    canvas.style.position = 'absolute';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.style.zIndex = '0';
-    canvas.style.pointerEvents = 'none';
-    placeholder.appendChild(canvas);
-    
-    // Inhalt (über dem Canvas)
-    const content = document.createElement('div');
-    content.style.position = 'relative';
-    content.style.zIndex = '1';
-    content.style.padding = '2rem';
-    
-    content.innerHTML = `
-        <div style="font-size: 5rem; margin-bottom: 1.5rem; filter: drop-shadow(0 0 8px rgba(0,255,255,0.3));">🔒</div>
-        <h3 style="color: #0a3d62; margin-bottom: 1rem; font-size: 1.5rem;">Zugriff eingeschränkt.</h3>
-        <p style="color: #555; font-size: 1rem; max-width: 350px; margin: 0 auto; line-height: 1.6;">
-            Relevante Informationen werden kontextbasiert bereitgestellt.
-        </p>
-    `;
-    
-    placeholder.appendChild(content);
-    container.appendChild(placeholder);
-    
-    // Partikel-Animation
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    let animationId = null;
-    let width = 0, height = 0;
-    
-    function resizeCanvas() {
-        const rect = placeholder.getBoundingClientRect();
-        width = rect.width;
-        height = rect.height;
-        canvas.width = width;
-        canvas.height = height;
-    }
-    
-    function createParticles() {
-        const particleCount = 80;
-        particles = [];
-        for (let i = 0; i < particleCount; i++) {
-            particles.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                radius: 2 + Math.random() * 4,
-                speedX: (Math.random() - 0.5) * 0.5,
-                speedY: (Math.random() - 0.5) * 0.3 + 0.2,
-                opacity: 0.3 + Math.random() * 0.5,
-                color: `rgba(0, 255, 255, ${0.4 + Math.random() * 0.4})`
-            });
-        }
-    }
-    
-    function drawParticles() {
-        if (!ctx) return;
-        ctx.clearRect(0, 0, width, height);
+    // Platzhalter nach Zerfall anzeigen mit animierten Partikeln
+    function showPlaceholder(container) {
+        container.innerHTML = '';
         
-        particles.forEach(p => {
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            ctx.fillStyle = p.color;
-            ctx.fill();
+        // Container für den Platzhalter
+        const placeholder = document.createElement('div');
+        placeholder.style.position = 'relative';
+        placeholder.style.padding = '3rem 2rem';
+        placeholder.style.textAlign = 'center';
+        placeholder.style.backgroundColor = '#f8f9fa';
+        placeholder.style.borderRadius = '12px';
+        placeholder.style.border = '2px dashed #0a3d62';
+        placeholder.style.margin = '1rem';
+        placeholder.style.overflow = 'hidden';
+        placeholder.style.minHeight = '400px';
+        placeholder.style.display = 'flex';
+        placeholder.style.flexDirection = 'column';
+        placeholder.style.justifyContent = 'center';
+        placeholder.style.alignItems = 'center';
+        placeholder.style.animation = 'fadeIn 0.5s ease';
+        
+        // Canvas für Partikel-Hintergrund
+        const canvas = document.createElement('canvas');
+        canvas.style.position = 'absolute';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.zIndex = '0';
+        canvas.style.pointerEvents = 'none';
+        placeholder.appendChild(canvas);
+        
+        // Inhalt (über dem Canvas)
+        const content = document.createElement('div');
+        content.style.position = 'relative';
+        content.style.zIndex = '1';
+        content.style.padding = '2rem';
+        
+        content.innerHTML = `
+            <div style="font-size: 5rem; margin-bottom: 1.5rem; filter: drop-shadow(0 0 8px rgba(0,255,255,0.3));">🔒</div>
+            <h3 style="color: #0a3d62; margin-bottom: 1rem; font-size: 1.5rem;">Zugriff eingeschränkt.</h3>
+            <p style="color: #555; font-size: 1rem; max-width: 350px; margin: 0 auto; line-height: 1.6;">
+                Relevante Informationen werden kontextbasiert bereitgestellt.
+            </p>
+        `;
+        
+        placeholder.appendChild(content);
+        container.appendChild(placeholder);
+        
+        // Partikel-Animation
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationId = null;
+        let width = 0, height = 0;
+        
+        function resizeCanvas() {
+            const rect = placeholder.getBoundingClientRect();
+            width = rect.width;
+            height = rect.height;
+            canvas.width = width;
+            canvas.height = height;
+        }
+        
+        function createParticles() {
+            const particleCount = 80;
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: 2 + Math.random() * 4,
+                    speedX: (Math.random() - 0.5) * 0.5,
+                    speedY: (Math.random() - 0.5) * 0.3 + 0.2,
+                    opacity: 0.3 + Math.random() * 0.5,
+                    color: `rgba(0, 255, 255, ${0.4 + Math.random() * 0.4})`
+                });
+            }
+        }
+        
+        function drawParticles() {
+            if (!ctx) return;
+            ctx.clearRect(0, 0, width, height);
             
-            // Kleinen Glow-Effekt
-            ctx.shadowBlur = 8;
-            ctx.shadowColor = '#00ffff';
-            ctx.fill();
-            ctx.shadowBlur = 0;
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+                
+                // Kleinen Glow-Effekt
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = '#00ffff';
+                ctx.fill();
+                ctx.shadowBlur = 0;
+                
+                // Bewegung
+                p.x += p.speedX;
+                p.y += p.speedY;
+                
+                // Reset wenn aus dem Bild
+                if (p.x < -20) p.x = width + 20;
+                if (p.x > width + 20) p.x = -20;
+                if (p.y < -20) p.y = height + 20;
+                if (p.y > height + 20) p.y = -20;
+            });
             
-            // Bewegung
-            p.x += p.speedX;
-            p.y += p.speedY;
-            
-            // Reset wenn aus dem Bild
-            if (p.x < -20) p.x = width + 20;
-            if (p.x > width + 20) p.x = -20;
-            if (p.y < -20) p.y = height + 20;
-            if (p.y > height + 20) p.y = -20;
+            animationId = requestAnimationFrame(drawParticles);
+        }
+        
+        function initParticles() {
+            resizeCanvas();
+            createParticles();
+            drawParticles();
+        }
+        
+        // Bei Größenänderung neu skalieren
+        const resizeObserver = new ResizeObserver(() => {
+            resizeCanvas();
+            createParticles();
+        });
+        resizeObserver.observe(placeholder);
+        
+        initParticles();
+        
+        // Animation stoppen wenn Modal geschlossen wird
+        const modalElement = document.getElementById('resume-modal');
+        const closeModalHandler = function() {
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+                animationId = null;
+            }
+            resizeObserver.disconnect();
+        };
+        
+        // Event-Listener für Modal-Schließen
+        const modalCloseBtn = document.querySelector('.close-modal');
+        if (modalCloseBtn) {
+            modalCloseBtn.addEventListener('click', closeModalHandler);
+        }
+        modalElement.addEventListener('click', function(e) {
+            if (e.target === modalElement) closeModalHandler();
         });
         
-        animationId = requestAnimationFrame(drawParticles);
-    }
-    
-    function initParticles() {
-        resizeCanvas();
-        createParticles();
-        drawParticles();
-    }
-    
-    // Bei Größenänderung neu skalieren
-    const resizeObserver = new ResizeObserver(() => {
-        resizeCanvas();
-        createParticles();
-    });
-    resizeObserver.observe(placeholder);
-    
-    initParticles();
-    
-    // Animation stoppen wenn Modal geschlossen wird
-    const modal = document.getElementById('resume-modal');
-    const closeModalHandler = function() {
-        if (animationId) {
-            cancelAnimationFrame(animationId);
-            animationId = null;
+        // Download-Button deaktivieren
+        const downloadBtnElem = document.getElementById('download-resume');
+        if (downloadBtnElem) {
+            downloadBtnElem.style.opacity = '0.5';
+            downloadBtnElem.style.pointerEvents = 'none';
+            downloadBtnElem.title = 'Lebenslauf nur auf persönliche Anfrage';
         }
-        resizeObserver.disconnect();
-    };
-    
-    // Event-Listener für Modal-Schließen
-    const closeBtn = document.querySelector('.close-modal');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeModalHandler);
     }
+    
+    // Modal schließen
+    closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', function(e) {
-        if (e.target === modal) closeModalHandler();
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
     });
     
-    // Download-Button deaktivieren
-    const downloadBtn = document.getElementById('download-resume');
-    if (downloadBtn) {
-        downloadBtn.style.opacity = '0.5';
-        downloadBtn.style.pointerEvents = 'none';
-        downloadBtn.title = 'Lebenslauf nur auf persönliche Anfrage';
+    function closeModal() {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
     }
-}
-
-
-
-
-
+    
+    // Download-Funktion
+    downloadBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const iosHintElem = document.getElementById('ios-download-hint');
+        if (iosHintElem) {
+            iosHintElem.style.display = 'block';
+            iosHintElem.innerHTML = '<p style="color:#0a3d62;">📋 Der vollständige Lebenslauf ist nur auf persönliche Anfrage verfügbar. Kontaktieren Sie mich gerne!</p>';
+            setTimeout(() => {
+                iosHintElem.style.display = 'none';
+                iosHintElem.innerHTML = '';
+            }, 4000);
+        }
+    });
+});
