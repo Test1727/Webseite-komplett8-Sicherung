@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Nach 0.5 Sekunden: Papierschnipsel-Zerfall
                 setTimeout(() => {
                     startPaperShredEffect(pagesWrapper, pageImages, container);
-                }, 500);
+                }, 1500);
             });
             
         }).catch(function(error) {
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     shred.style.clipPath = randomShape;
                     shred.style.transformOrigin = 'center center';
                     shred.style.transform = `rotate(${initialRotation}deg)`;
-                    shred.style.transition = 'all 1.5s cubic-bezier(0.3, 0.8, 0.4, 1.1)';
+                    shred.style.transition = 'all 5.0s cubic-bezier(0.3, 0.8, 0.4, 1.1)';
                     
                     // Zufällige Flugrichtung und Rotation
                     const angle = Math.random() * Math.PI * 2;
