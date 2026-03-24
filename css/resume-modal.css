@@ -207,6 +207,15 @@
     color: #00ffff !important;
 }
 
+.modal-footer {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #eee;
+    min-height: 60px;  /* ← feste Mindesthöhe */
+    justify-content: center;
+}
+
 
 
 
