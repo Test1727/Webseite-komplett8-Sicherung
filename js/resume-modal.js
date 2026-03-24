@@ -118,18 +118,29 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                 );
             }
+
+
+Promise.all(loadPromises).then(() => {
+    // Zuerst scharf anzeigen (kein Blur)
+    pageImages.forEach(img => {
+        img.canvas.style.filter = 'blur(0px)';
+        img.canvas.style.transition = 'filter 0.8s ease';
+    });
+    
+    // Nach 0.3 Sekunden: langsam unscharf werden
+    setTimeout(() => {
+        pageImages.forEach(img => {
+            img.canvas.style.filter = 'blur(12px)';
+        });
+    }, 300);
+    
+    // Nach 1.8 Sekunden (0.3 + 1.5): Papierschnipsel-Zerfall
+    setTimeout(() => {
+        startPaperShredEffect(pagesWrapper, pageImages, container);
+    }, 1800);
+});
             
-            Promise.all(loadPromises).then(() => {
-                // Kurz unscharf machen
-                pageImages.forEach(img => {
-                    img.canvas.style.filter = 'blur(12px)';
-                });
-                
-                // Nach 1.5 Sekunden: Papierschnipsel-Zerfall
-                setTimeout(() => {
-                    startPaperShredEffect(pagesWrapper, pageImages, container);
-                }, 1500);
-            });
+     
             
         }).catch(function(error) {
             container.innerHTML = `<p style="padding:2rem; text-align:center; color:red;">
@@ -181,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
             wrapper.appendChild(shredContainer);
             
             // Schnipsel erzeugen (wie zerrissene Papierstücke)
-            const shredCount = 64;
+            const shredCount = 80;
             const shreds = [];
             
             // Bild laden für Schnipsel
@@ -236,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     shred.style.boxShadow = '2px 3px 8px rgba(0,0,0,0.3)';
                     shred.style.transformOrigin = 'center center';
                     shred.style.transform = `rotate(${initialRotation}deg)`;
-                    shred.style.transition = 'all 2.5s cubic-bezier(0.3, 0.8, 0.4, 1.1)';
+                    shred.style.transition = 'all 5.0s cubic-bezier(0.3, 0.8, 0.4, 1.1)';
                     // WICHTIG: clipPath nach dem backgroundImage setzen
                     shred.style.clipPath = randomShape;
                     shred.style.webkitClipPath = randomShape;
