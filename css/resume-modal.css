@@ -209,6 +209,7 @@
     font-size: 10rem;
     margin-bottom: 1.5rem;
     /*filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.6));*/
+     fill: #928e8e;        /* Füllfarbe (gefülltes Schloss) */
 }
 
 .placeholder-content h3 {
