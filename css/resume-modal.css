@@ -183,9 +183,9 @@
 .placeholder-container::before {
     content: '';
     position: absolute;
-    top: 20px;           /* ← Abstand oben = 20px (wie links) */
+    top: 25px;      /* ← Abstand oben = 20px (wie links) */
     bottom: 0;           /* ← kein Abstand unten */
-    left: 20px;          /* ← Abstand links */
+    left: 25px;        /* ← Abstand links */
     width: calc(33.33% - 20px);
     background-color: #ede9e6;
     z-index: 0;
