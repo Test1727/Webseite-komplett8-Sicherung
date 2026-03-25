@@ -275,6 +275,26 @@
 
 
 
+/* ===== TABLET (769px - 992px) ===== */
+@media (min-width: 769px) and (max-width: 992px) {
+    .lock-icon {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 2rem;
+    }
+    
+    .placeholder-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .placeholder-content p {
+        font-size: 1rem;
+        max-width: 400px;
+    }
+}
+
+
+
 
 /* Responsive Anpassungen */
 @media (max-width: 768px) {
@@ -294,42 +314,37 @@
         padding: 1.5rem;
     }
     
-    .lock-icon {        
+   /* .lock-icon {        
     width: 80px;
     height: 80px;
         font-size: 3.5rem;
          margin-bottom: 3rem;  /* ← größerer Abstand nach unten */
-    }
+    }*/
     
     .placeholder-content h3 {
         font-size: 1.2rem;
     }
     
+  /*  .placeholder-content p {
+        font-size: 0.9rem;
+    } */
+
+    .lock-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1.5rem;
+    }
+    
+
     .placeholder-content p {
         font-size: 0.9rem;
+        max-width: 280px;
     }
+
+    
 }
 
 
     
-}
 
-@media (max-width: 480px) {
-    .modal-header {
-        padding: 10px 15px;
-    }
-    
-    .modal-footer {
-        padding: 10px 15px;
-    }
-    
-    .download-btn {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-        width: 100%;
-    }
-    
-    .pdf-container {
-        height: 50vh;
-    }
-}
+
