@@ -252,7 +252,7 @@ nav ul li a.active {
    ======================================== */
 
 main { padding-top: 0 !important; 
-      /* flex: 1; */ 
+      flex: 1;
      }
 
 section {
