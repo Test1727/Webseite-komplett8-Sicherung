@@ -59,7 +59,6 @@
 }
 
 
-
 .close-modal {
     background: none;
     border: none;
@@ -160,8 +159,6 @@
 }
 
 
-
-
 .placeholder-container {
     position: relative;
     height: 100%;
@@ -189,10 +186,6 @@
 }
 
 
-
-
-
-
 /* Inhalt */
 .placeholder-content {
     position: relative;
@@ -212,7 +205,6 @@
 }
 
 
-
 .placeholder-content h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -227,7 +219,6 @@
     line-height: 1.6;
     color: #a8a4a4;
 }
-
 
 
 .modal-footer {
@@ -286,7 +277,6 @@
     }
     
 
-
     .lock-icon {
         width: 70px;
         height: 70px;
@@ -297,9 +287,7 @@
     .placeholder-content p {
         font-size: 0.9rem;
         max-width: 280px;
-    }
-
-    
+    }    
 }
 
 
