@@ -935,18 +935,23 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
 
 
-    
 
-
-<!-- Menüpunkt Farbe ändern bei Klick/Scroll nur mit CSS geht das nicht da ständig berechnet werden muß welcher Bereich im Display sichtbar ist -->
+<!-- Menüpunkt Farbe ändern bei Klick/Scroll – mit dynamischer Header-Höhe -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav ul li a');
     const sections = document.querySelectorAll('section[id]');
+    const header = document.querySelector('header');
+    
+    // Aktuelle Header-Höhe auslesen (fallback 70px)
+    function getHeaderHeight() {
+        return header ? header.offsetHeight : 70;
+    }
     
     // Aktiven Menüpunkt beim Scrollen markieren
     function updateActiveSection() {
-        const scrollPosition = window.scrollY + 80; // Toleranz für Header
+        const headerHeight = getHeaderHeight();
+        const scrollPosition = window.scrollY + headerHeight; // dynamische Toleranz
         
         let currentSection = '';
         
@@ -968,21 +973,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Scroll-Event
+    // Scroll-Event mit Entprellung
     let scrollTimeout;
     window.addEventListener('scroll', function() {
         if (scrollTimeout) clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(updateActiveSection, 50);
     });
     
+    // Bei Fenstergrößenänderung neu berechnen (weil Header-Höhe sich ändern kann)
+    window.addEventListener('resize', function() {
+        updateActiveSection();
+    });
+    
     // Initial ausführen
     updateActiveSection();
     
-    // Menü-Klicks - NICHTS weiter tun, Browser macht alles!
-    // Wir müssen nur sicherstellen, dass die Links korrekt sind
     console.log('Menü-Links gefunden:', navLinks.length);
 });
 </script>
+
+    
+
     
 
 <!-- Rotation im Feld Nachricht -->
