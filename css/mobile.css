@@ -557,6 +557,13 @@
 
 
 
+/* Smartphones & schmale Fenster im Hochformat */
+@media (max-width: 768px) and (orientation: portrait) {
+
+
+
+}
+
 
  
 
@@ -643,7 +650,10 @@
    SMARTPHONE OPTIMIERUNGEN (max-width: 768px)
    ======================================== */
 
-@media (max-width: 768px) {
+
+
+/* Smartphones & schmale Fenster im Querformat */
+@media (max-width: 768px) and (orientation: landscape) {
     
     /* === BASIS-TYPOGRAFIE KOMPAKTER === */
     body {
