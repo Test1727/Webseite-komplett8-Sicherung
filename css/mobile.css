@@ -472,42 +472,40 @@
 
 
 
-
-
-@media (min-width: 993px) and (orientation: portrait) {
-    
+/* ========================================
+   HOCHFORMAT FÜR TABLETS UND GROSSE GERÄTE
+   ======================================== */
+@media (orientation: portrait) and (min-width: 769px) {
     .hero {
-        margin-top: -100px; /* Negativer Wert schiebt nach oben */
-        background-image: url('images/8%20color.svg');
-        background-size: cover;
-        background-position: center;
-        background-color: transparent;
-         border: 10px solid red !important;
+        background-color: transparent !important;
+        border: 5px solid red !important;
     }
     
-    .hero-brain {
-        display: none;
-    }
-    
+    /* Kopiere hier alle wichtigen Tablet-Styles */
     .hero .container {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
+        flex-direction: column !important;
+        text-align: center !important;
     }
     
     .hero-content {
-        order: 2;
+        order: 2 !important;
     }
     
     .hero-image {
-        order: 1;
+        order: 1 !important;
     }
     
     .profile-image {
-        width: 220px;
-        height: 220px;
+        width: 220px !important;
+        height: 220px !important;
+    }
+    
+    .hero-brain {
+        opacity: 0.2 !important;
+        left: -50% !important;
     }
 }
+
 
 
 
