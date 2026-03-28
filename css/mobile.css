@@ -505,6 +505,7 @@
         pointer-events: none !important;
           transform: rotate(-90deg) !important; 
         left: -20% !important;
+         width: 120% !important; /* Breiter, um Überhang zu 
     }
     
     /* Container für Text und Profilbild */
