@@ -512,17 +512,19 @@
     }
 
 
-        
     .language-selector select {
-        padding-right: 30px !important;
-        background-position: right 10px center !important;
-        background-size: 10px !important;
-        text-align: left !important;
-        text-align-last: left !important;
-        height: 32px !important;
-        font-size: 0.75rem !important;
-        padding: 4px 10px !important;
-    }
+    height: 32px !important;
+    font-size: 0.75rem !important;
+    padding: 4px 10px !important;
+    padding-right: 30px !important; /* Überschreibt das rechte Padding */
+    background-position: right 10px center !important;
+    background-size: 10px !important;
+    text-align: left !important;
+    text-align-last: left !important;
+}
+
+        
+
 
 
         .header-right {
