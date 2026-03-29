@@ -501,11 +501,14 @@
         font-size: 1.3rem !important;
     }
     
-    .language-selector select,
+
     .resume-btn {
         height: 32px !important;
         font-size: 0.75rem !important;
         padding: 4px 10px !important;
+        max-width: 120px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
     }
 
 
@@ -516,6 +519,9 @@
         background-size: 10px !important;
         text-align: left !important;
         text-align-last: left !important;
+        height: 32px !important;
+        font-size: 0.75rem !important;
+        padding: 4px 10px !important;
     }
 
 
