@@ -1,6 +1,9 @@
-/* ========================================
-   BASE STYLES & VARIABLES
-   ======================================== */
+/* ======================================== */
+/* 1. BASIS: styles.css */
+/* Gilt für ALLE Geräte als Grundlage */
+/* Wird von allen folgenden Media Queries überschrieben */
+/* ======================================== */
+
 
 :root {
     --primary-color: #0a2463; /* Deep Blue */
@@ -26,9 +29,6 @@
     box-sizing: border-box;
 }
 
-* {
-    outline: 1px solid red;
-}
 
 
 body {
