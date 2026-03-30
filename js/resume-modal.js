@@ -62,14 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'flex';
 
 // Nach modal.style.display = 'flex'; einfügen:
-if (window.innerWidth <= 480) {
+if (window.innerWidth <= 768) {
     const modalContent = document.querySelector('#resume-modal .modal-content');
     if (modalContent) {
         modalContent.style.minHeight = '80vh';
         modalContent.style.height = 'auto';
     }
 }
-document.body.style.overflow = 'hidden';
 
 
 
@@ -107,7 +106,7 @@ document.body.style.overflow = 'hidden';
             pagesWrapper.style.width = '100%';
 
             // Speziell für schmale Fenster
-if (window.innerWidth <= 480) {
+if (window.innerWidth <= 768) {
     pagesWrapper.style.maxHeight = 'none';
     pagesWrapper.style.minHeight = '550px';
 } else {
