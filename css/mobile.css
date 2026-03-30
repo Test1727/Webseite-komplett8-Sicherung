@@ -487,151 +487,6 @@
 
 
 
-/* ======================================== */
-/* 3. TABLET-HOCHFORMAT & GROSSE HOCHFORMATE */
-/* ======================================== */
-    /* Greift bei:
-       - Alle Geräte mit Breite >= 769px
-       - UND Hochformat (Höhe > Breite)
-       - Typische Beispiele: iPad im Hochformat, große Tablets, Desktop-Monitore im Hochformat
-       - Achtung: Erfasst auch große Desktop-Monitore im Hochformat!
-    */
-*/ ======================================== */
-@media (orientation: portrait) and (min-width: 769px) {
-    /* Header/Menü anpassen */
-    header .container {
-        width: 100% !important;
-        max-width: 100% !important;
-        justify-content: space-between !important;
-        flex-wrap: nowrap !important;
-        gap: 2vw !important;
-    }
-    
-    nav {
-        margin-right: 15px !important;
-    }
-    
-    nav ul {
-        gap: 6px !important;
-        flex-wrap: nowrap !important;
-    }
-    
-    nav ul li a {
-        font-size: 0.75rem !important;
-        padding: 4px 6px !important;
-    }
-    
-    .logo {
-        font-size: 1.1rem !important;
-    }
-    
-    .language-selector select,
-    .resume-btn {
-        height: 28px !important;
-        font-size: 0.65rem !important;
-        padding: 4px 8px !important;
-        white-space: nowrap !important;
-    }
-    
-    .language-selector select {
-        padding-right: 28px !important;
-        background-position: right 8px center !important;
-    }
-
-    /* HERO - MIT ROTER UMRANDUNG ZUM TESTEN */
-    .hero {
-        background-color: #0f2a4a !important;
-        position: relative !important;
-        overflow: hidden !important;
-        min-height: 100vh !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 80px 0 !important;
-        border: 3px solid red !important;  /* ROTE UMRANDUNG */
-        box-sizing: border-box !important;
-    }
-    
-    /* Gehirnbild BEHALTEN */
-    .hero-brain {
-        opacity: 0.15 !important;
-        left: -50% !important;
-        width: 200% !important;
-        position: absolute !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        border: 2px solid yellow !important;  /* GELBE UMRANDUNG FÜRS GEHIRNBILD */
-    }
-    
-    .hero .container {
-        position: relative !important;
-        z-index: 2 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        width: 100% !important;
-        gap: 50px !important;
-        padding: 0 20px !important;
-        border: 2px solid blue !important;  /* BLAUE UMRANDUNG FÜR CONTAINER */
-    }
-    
-    .hero-content {
-        order: 2 !important;
-        width: 100% !important;
-        max-width: 600px !important;
-        border: 2px solid green !important;  /* GRÜNE UMRANDUNG FÜR CONTENT */
-    }
-    
-    .hero-image {
-        order: 1 !important;
-        border: 2px solid orange !important;  /* ORANGE UMRANDUNG FÜR BILD-BEREICH */
-    }
-    
-    .profile-image {
-        width: 200px !important;
-        height: 200px !important;
-        border: 2px solid cyan !important;  /* CYAN UMRANDUNG FÜR PROFILBILD */
-    }
-    
-    .hero-content h1 {
-        margin-bottom: 15px !important;
-        font-size: clamp(2rem, 5vw, 2.5rem) !important;
-    }
-    
-    .hero-content h2 {
-        margin-bottom: 15px !important;
-        font-size: clamp(1.2rem, 3vw, 1.5rem) !important;
-    }
-    
-    .hero-content p {
-        margin-bottom: 25px !important;
-        font-size: 1rem !important;
-    }
-    
-    .hero-buttons {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        gap: 20px !important;
-        width: 100% !important;
-        margin-top: 10px !important;
-        flex-wrap: wrap !important;
-        border: 2px solid magenta !important;  /* MAGENTA UMRANDUNG FÜR BUTTONS */
-    }
-    
-    .hero-buttons .btn {
-        flex: 0 1 auto !important;
-        max-width: 220px !important;
-        min-width: 160px !important;
-        text-align: center !important;
-        white-space: nowrap !important;
-        padding: 10px 20px !important;
-        border: 2px solid white !important;  /* WEISSE UMRANDUNG FÜR JEDEN BUTTON */
-    }
-}
-
 
 
 
@@ -1487,6 +1342,156 @@
     }
 }
 
+
+
+
+
+
+
+/* ======================================== */
+/* 3. TABLET-HOCHFORMAT & GROSSE HOCHFORMATE */
+/* ======================================== */
+    /* Greift bei:
+       - Alle Geräte mit Breite >= 769px
+       - UND Hochformat (Höhe > Breite)
+       - Typische Beispiele: iPad im Hochformat, große Tablets, Desktop-Monitore im Hochformat
+       - Achtung: Erfasst auch große Desktop-Monitore im Hochformat!
+    */
+*/ ======================================== */
+@media (orientation: portrait) and (min-width: 769px) {
+    /* Header/Menü anpassen */
+    header .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        gap: 2vw !important;
+    }
+    
+    nav {
+        margin-right: 15px !important;
+    }
+    
+    nav ul {
+        gap: 6px !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    nav ul li a {
+        font-size: 0.75rem !important;
+        padding: 4px 6px !important;
+    }
+    
+    .logo {
+        font-size: 1.1rem !important;
+    }
+    
+    .language-selector select,
+    .resume-btn {
+        height: 28px !important;
+        font-size: 0.65rem !important;
+        padding: 4px 8px !important;
+        white-space: nowrap !important;
+    }
+    
+    .language-selector select {
+        padding-right: 28px !important;
+        background-position: right 8px center !important;
+    }
+
+    /* HERO - MIT ROTER UMRANDUNG ZUM TESTEN */
+    .hero {
+        background-color: #0f2a4a !important;
+        position: relative !important;
+        overflow: hidden !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 80px 0 !important;
+        border: 3px solid red !important;  /* ROTE UMRANDUNG */
+        box-sizing: border-box !important;
+    }
+    
+    /* Gehirnbild BEHALTEN */
+    .hero-brain {
+        opacity: 0.15 !important;
+        left: -50% !important;
+        width: 200% !important;
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        border: 2px solid yellow !important;  /* GELBE UMRANDUNG FÜRS GEHIRNBILD */
+    }
+    
+    .hero .container {
+        position: relative !important;
+        z-index: 2 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        gap: 50px !important;
+        padding: 0 20px !important;
+        border: 2px solid blue !important;  /* BLAUE UMRANDUNG FÜR CONTAINER */
+    }
+    
+    .hero-content {
+        order: 2 !important;
+        width: 100% !important;
+        max-width: 600px !important;
+        border: 2px solid green !important;  /* GRÜNE UMRANDUNG FÜR CONTENT */
+    }
+    
+    .hero-image {
+        order: 1 !important;
+        border: 2px solid orange !important;  /* ORANGE UMRANDUNG FÜR BILD-BEREICH */
+    }
+    
+    .profile-image {
+        width: 200px !important;
+        height: 200px !important;
+        border: 2px solid cyan !important;  /* CYAN UMRANDUNG FÜR PROFILBILD */
+    }
+    
+    .hero-content h1 {
+        margin-bottom: 15px !important;
+        font-size: clamp(2rem, 5vw, 2.5rem) !important;
+    }
+    
+    .hero-content h2 {
+        margin-bottom: 15px !important;
+        font-size: clamp(1.2rem, 3vw, 1.5rem) !important;
+    }
+    
+    .hero-content p {
+        margin-bottom: 25px !important;
+        font-size: 1rem !important;
+    }
+    
+    .hero-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+        flex-wrap: wrap !important;
+        border: 2px solid magenta !important;  /* MAGENTA UMRANDUNG FÜR BUTTONS */
+    }
+    
+    .hero-buttons .btn {
+        flex: 0 1 auto !important;
+        max-width: 220px !important;
+        min-width: 160px !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        padding: 10px 20px !important;
+        border: 2px solid white !important;  /* WEISSE UMRANDUNG FÜR JEDEN BUTTON */
+    }
+}
 
 
 
