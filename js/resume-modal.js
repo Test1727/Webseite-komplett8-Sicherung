@@ -60,6 +60,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         modal.style.display = 'flex';
+
+// Nach modal.style.display = 'flex'; einfügen:
+if (window.innerWidth <= 480) {
+    const modalContent = document.querySelector('#resume-modal .modal-content');
+    if (modalContent) {
+        modalContent.style.minHeight = '80vh';
+        modalContent.style.height = 'auto';
+    }
+}
+document.body.style.overflow = 'hidden';
+
+
+
+        
         document.body.style.overflow = 'hidden';
         
         const currentLang = document.documentElement.getAttribute('lang') || 'de';
