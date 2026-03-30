@@ -1359,8 +1359,7 @@
     */
 /* ======================================== */
 @media (orientation: portrait) and (min-width: 769px) {
-    
-    /* Header/Menü - KEINE SCROLLBAR */
+        /* Header/Menü - KEINE SCROLLBAR */
     header .container {
         width: 100% !important;
         max-width: 100% !important;
@@ -1368,54 +1367,59 @@
         justify-content: space-between !important;
         align-items: center !important;
         flex-wrap: nowrap !important;
-        gap: 1vw !important;
-        padding: 0 20px !important;
+        gap: 0.5vw !important;
+        padding: 0 15px !important;
     }
     
     .logo {
-        font-size: 1.3rem !important;
+        font-size: 1.2rem !important;
         flex-shrink: 0 !important;
     }
     
     nav {
         margin: 0 5px !important;
-        flex-shrink: 1 !important;
-        overflow: visible !important;  /* Keine Scrollbar */
+        flex: 1 !important;
+        min-width: 0 !important;  /* Erlaubt Schrumpfen */
+        overflow: visible !important;
     }
     
     nav ul {
         display: flex !important;
         justify-content: flex-start !important;
-        gap: 8px !important;
+        gap: 4px !important;
         flex-wrap: nowrap !important;
         margin: 0 !important;
         padding: 0 !important;
     }
     
     nav ul li a {
-        font-size: 0.8rem !important;
-        padding: 4px 8px !important;
+        font-size: 0.75rem !important;
+        padding: 4px 6px !important;
         white-space: nowrap !important;
     }
     
     .header-right {
         display: flex !important;
-        gap: 8px !important;
+        gap: 6px !important;
         flex-shrink: 0 !important;
     }
     
     .language-selector select,
     .resume-btn {
-        height: 28px !important;
-        font-size: 0.65rem !important;
-        padding: 4px 8px !important;
+        height: 26px !important;
+        font-size: 0.6rem !important;
+        padding: 2px 6px !important;
         white-space: nowrap !important;
     }
     
     .language-selector select {
-        padding-right: 24px !important;
-        background-position: right 6px center !important;
+        padding-right: 20px !important;
+        background-position: right 4px center !important;
     }
+
+
+
+
 
     /* ===== HERO SECTION bleibt unverändert ===== */
     .hero {
