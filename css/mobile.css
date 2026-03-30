@@ -1360,49 +1360,48 @@
 /* ======================================== */
 @media (orientation: portrait) and (min-width: 769px) {
     
-    /* Header/Menü - FLEXIBEL ANGEPASST */
+    /* Header/Menü - KEINE SCROLLBAR */
     header .container {
         width: 100% !important;
         max-width: 100% !important;
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        flex-wrap: wrap !important;           /* Umbruch bei Bedarf */
-        gap: 10px !important;                 /* Reduziert von 2vw */
+        flex-wrap: nowrap !important;
+        gap: 1vw !important;
         padding: 0 20px !important;
     }
     
     .logo {
-        font-size: 1.5rem !important;
-        flex-shrink: 0 !important;            /* Bleibt in voller Größe */
+        font-size: 1.3rem !important;
+        flex-shrink: 0 !important;
     }
     
     nav {
-        margin-right: 0 !important;           /* Entfernt */
-        flex: 1 !important;                   /* Nimmt verfügbaren Platz */
-        overflow-x: auto !important;          /* Scrollbar bei Überlauf */
-        -webkit-overflow-scrolling: touch !important;
+        margin: 0 5px !important;
+        flex-shrink: 1 !important;
+        overflow: visible !important;  /* Keine Scrollbar */
     }
     
     nav ul {
         display: flex !important;
-        justify-content: center !important;   /* Zentriert bei Platz */
-        gap: 12px !important;                /* Etwas mehr Abstand */
+        justify-content: flex-start !important;
+        gap: 8px !important;
         flex-wrap: nowrap !important;
         margin: 0 !important;
         padding: 0 !important;
     }
     
     nav ul li a {
-        font-size: 0.9rem !important;
-        padding: 6px 10px !important;         /* Etwas mehr Padding */
+        font-size: 0.8rem !important;
+        padding: 4px 8px !important;
         white-space: nowrap !important;
     }
     
     .header-right {
         display: flex !important;
-        gap: 10px !important;
-        flex-shrink: 0 !important;            /* Bleibt in voller Größe */
+        gap: 8px !important;
+        flex-shrink: 0 !important;
     }
     
     .language-selector select,
@@ -1414,11 +1413,11 @@
     }
     
     .language-selector select {
-        padding-right: 28px !important;
-        background-position: right 8px center !important;
+        padding-right: 24px !important;
+        background-position: right 6px center !important;
     }
 
-    /* ===== HERO SECTION - PROFILBILD RECHTS NEBEN TEXT ===== */
+    /* ===== HERO SECTION bleibt unverändert ===== */
     .hero {
         min-height: 100vh !important;
         padding: 80px 0 !important;
@@ -1428,7 +1427,6 @@
         justify-content: center !important;
     }
     
-    /* Gehirnbild im Hintergrund (sichtbar) */
     .hero-brain {
         display: block !important;
         position: absolute !important;
@@ -1508,6 +1506,7 @@
         text-align: center !important;
     }
 }
+
 
 
 
