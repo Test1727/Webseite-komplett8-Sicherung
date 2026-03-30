@@ -1357,7 +1357,7 @@
        - Typische Beispiele: iPad im Hochformat, große Tablets, Desktop-Monitore im Hochformat
        - Achtung: Erfasst auch große Desktop-Monitore im Hochformat!
     */
-*/ ======================================== */
+/* ======================================== */
 @media (orientation: portrait) and (min-width: 769px) {
     /* Header/Menü anpassen */
     header .container {
