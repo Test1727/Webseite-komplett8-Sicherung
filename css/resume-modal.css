@@ -291,6 +291,13 @@
 }
 
 
-
+/* ======================================== */
+/* EXTREM SCHMALE FENSTER (≤480px) */
+/* ======================================== */
+@media (max-width: 480px) {
+    .modal-content {
+        max-height: none !important;
+    }
+}
 
 
