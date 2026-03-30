@@ -292,27 +292,5 @@
 
 
 
-@media (max-width: 480px) {
-    .modal-content {
-        max-height: none !important;
-        height: auto !important;
-    }
-    
-    .modal-body {
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-    
-    #pdfjs-container {
-        height: auto !important;
-        min-height: 500px !important;
-    }
-    
-    .pages-wrapper {
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
-    }
-}
-
 
 
