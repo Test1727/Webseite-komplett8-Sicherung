@@ -1358,7 +1358,6 @@
        - Achtung: Erfasst auch große Desktop-Monitore im Hochformat!
     */
 /* ======================================== */
-
 @media (orientation: portrait) and (min-width: 769px) {
     
     /* Header/Menü anpassen */
@@ -1401,7 +1400,7 @@
         background-position: right 8px center !important;
     }
 
-    /* ===== HERO SECTION ANGEPASST ===== */
+    /* ===== HERO SECTION - PROFILBILD RECHTS NEBEN TEXT ===== */
     .hero {
         min-height: 100vh !important;
         padding: 80px 0 !important;
@@ -1429,18 +1428,19 @@
         position: relative !important;
         z-index: 3 !important;
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: row !important;      /* ZEILE statt SPALTE */
         align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
+        justify-content: space-between !important;
+        text-align: left !important;         /* Linksbündig statt zentriert */
         width: 100% !important;
-        gap: 80px !important;
-        padding: 0 20px !important;
+        max-width: 1100px !important;
+        gap: 50px !important;
+        padding: 0 40px !important;
     }
     
     .hero-content {
-        order: 2 !important;
-        max-width: 500px !important;
+        order: 1 !important;                 /* TEXT LINKS */
+        max-width: 55% !important;
         width: 100% !important;
         margin-top: 0 !important;
     }
@@ -1461,13 +1461,14 @@
     }
     
     .hero-image {
-        order: 1 !important;
+        order: 2 !important;                 /* BILD RECHTS */
         margin-top: 0 !important;
+        flex-shrink: 0 !important;
     }
     
     .profile-image {
-        width: 200px !important;
-        height: 200px !important;
+        width: 220px !important;
+        height: 220px !important;
         margin-top: 0 !important;
         border-width: 3px !important;
     }
@@ -1475,9 +1476,9 @@
     .hero-buttons {
         display: flex !important;
         flex-direction: row !important;
-        justify-content: center !important;
+        justify-content: flex-start !important;  /* Links ausrichten */
         gap: 15px !important;
-        margin-top: 40px !important;
+        margin-top: 30px !important;
         flex-wrap: wrap !important;
     }
     
@@ -1485,9 +1486,12 @@
         width: 180px !important;
         padding: 10px 20px !important;
         font-size: 0.9rem !important;
+        text-align: center !important;
     }
-    
 }
+
+
+
 
 
 
