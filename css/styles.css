@@ -338,22 +338,33 @@ section {
     color: #e0e0e0;
 }
 
-.hero-buttons {
-    margin-top: 40px;
-    display: flex;
-    gap: 20px;
-    /*justify-content: flex-start;*/
-    justify-content: center !important; 
-}
+    .hero-buttons {
+        margin-top: 40px;
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .hero-buttons .btn {
+        padding: 14px 35px;
+        font-size: 1.1rem;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        min-width: 190px;
+        max-width: 240px;
+        width: auto;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
+        cursor: pointer;
+    }
 
-.hero-buttons .btn {
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    min-width: 180px;
-    text-align: center;
-}
+
+
+
 
 .hero-buttons .btn-primary,
 .hero-buttons .btn-secondary {
